@@ -40,8 +40,9 @@ class Test(QWidget, Ui_Form):
 
         self.currentColor = constants.GREEN
 
-        self.text = getText()
-        self.event.setTextName(self.text)
+        text_name = getTextName()
+        self.text = getText(text_name)
+        self.event.setTextName(text_name)
         self.updateText()
 
     def keyPressEvent(self, key: QtGui.QKeyEvent):
@@ -124,17 +125,20 @@ AND language in {str(text_parameter['language'])}
     return text_name
 
 
-def getText(text_parameter: dict = None):
+def getText(text_name):
+    with open(f'texts/{text_name}') as f:
+        text = f.read().strip()
+
+    return text
+
+
+def getTextName(text_parameter: dict = None):
     if text_parameter is None:
         text_parameter = {}
     text_parameter = {
         key: (text_parameter[key] if key in text_parameter
               else constants.DEFAULT_TEXT_OPTIONS[key])
         for key in constants.DEFAULT_TEXT_OPTIONS.keys()}
-
     text_name = getNameOfTextWithParameters(text_parameter)
 
-    with open(f'texts/{text_name}') as f:
-        text = f.read().strip()
-
-    return text
+    return text_name
