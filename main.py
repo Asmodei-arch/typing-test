@@ -1,7 +1,7 @@
 import sys
 
-import qt_material
 from PyQt5.QtWidgets import QApplication
+import qt_material
 
 from logic.start_menu import StartMenu
 

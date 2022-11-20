@@ -4,6 +4,7 @@ from random import choice
 from string import punctuation
 
 from PyQt5 import QtGui
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget
 
 import constants
@@ -17,6 +18,8 @@ class Test(QWidget, Ui_Form):
     def __init__(self, event=None, text_options: dict = None):
         super(Test, self).__init__()
         self.setupUi(self)
+
+        self.setWindowModality(Qt.WindowModal)
 
         if event is None:
             event = Event()

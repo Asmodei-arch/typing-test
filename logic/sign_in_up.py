@@ -1,5 +1,6 @@
 import hashlib
 
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget
 
 from logic.base import Base
@@ -39,6 +40,8 @@ class SignInUp(QWidget, Ui_Form):
         if event is None:
             event = Event()
         self.event = event
+
+        self.setWindowModality(Qt.WindowModal)
 
         self.canAddToBase = False
 

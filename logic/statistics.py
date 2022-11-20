@@ -2,6 +2,7 @@ from datetime import datetime
 from time import strptime, mktime
 
 import pyqtgraph
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget
 
 import constants
@@ -15,6 +16,8 @@ class Statistics(QWidget, Ui_Form):
         super(Statistics, self).__init__()
         self.graph = None
         self.setupUi(self)
+
+        self.setWindowModality(Qt.WindowModal)
 
         self.error_cnt = error_cnt
         self.secondsElapsed = seconds_elapsed
