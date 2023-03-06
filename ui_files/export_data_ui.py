@@ -36,6 +36,6 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "Экспорт данных"))
         self.chooseFileButton.setText(_translate("Form", "Выбрать местоположение файла"))
         self.exportButton.setText(_translate("Form", "Экспортировать"))

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Выбор режима</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -39,7 +39,7 @@
      <item>
       <widget class="QPushButton" name="oneErrorMode">
        <property name="text">
-        <string>Мазохист</string>
+        <string>Без права на ошибку</string>
        </property>
       </widget>
      </item>

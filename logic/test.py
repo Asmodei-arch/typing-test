@@ -41,7 +41,7 @@ class Test(QWidget, Ui_Form):
         self.errorCnt = 0
         self.previousErrorIndex = -1
 
-        self.currentColor = constants.GREEN
+        self.currentColor = constants.DARK_GREEN
 
         text_name = getTextName()
         self.text = getText(text_name)
@@ -58,7 +58,7 @@ class Test(QWidget, Ui_Form):
             self.error()
         else:
             self.currentIndex += 1
-            self.currentColor = constants.GREEN
+            self.currentColor = constants.DARK_GREEN
 
         if self.currentIndex == len(self.text):
             self.endTest()
@@ -88,7 +88,7 @@ class Test(QWidget, Ui_Form):
         if self.previousErrorIndex == self.currentIndex:
             return
         if self.mode == 'oneError':
-            self.endTest()
+            self.endTest('a')
             return
 
         self.errorCnt += 1
@@ -100,7 +100,7 @@ class Test(QWidget, Ui_Form):
             return
         self.accuracy.setValue(100 - (self.errorCnt / self.currentIndex) * 100)
 
-    def endTest(self, *args):
+    def endTest(self, _):
         self.statistic = Statistics((datetime.now() - self.startTime).total_seconds(),
                                     self.errorCnt, self.currentIndex, self.event)
         self.statistic.show()

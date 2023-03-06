@@ -1,3 +1,5 @@
+import sys
+
 from PyQt5.QtWidgets import QMainWindow
 
 from logic.choose_mode import ChooseMode
@@ -71,6 +73,9 @@ class StartMenu(QMainWindow, Ui_MainWindow):
         self.chooseModeWindow.hideEvent = self.openTestWindow
 
     def openTestWindow(self, _):
+        if self.event.currentMode is None:
+            sys.exit(0)
+
         self.hide()
         self.testModeWindow = Test(self.event)
         self.testModeWindow.show()

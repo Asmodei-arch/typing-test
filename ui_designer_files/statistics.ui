@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>435</width>
     <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Статистика</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -52,6 +52,9 @@
        <property name="buttonSymbols">
         <enum>QAbstractSpinBox::NoButtons</enum>
        </property>
+       <property name="suffix">
+        <string> знаков/мин.</string>
+       </property>
        <property name="maximum">
         <double>10000.000000000000000</double>
        </property>
@@ -64,6 +67,9 @@
        </property>
        <property name="buttonSymbols">
         <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="suffix">
+        <string>%</string>
        </property>
        <property name="maximum">
         <double>100.000000000000000</double>

@@ -35,7 +35,9 @@ class Statistics(QWidget, Ui_Form):
 
         self.printStatistics()
         self.insertEventToBase()
-        self.showPlot()
+
+        if event.username != 'anon':
+            self.showPlot()
 
     def printStatistics(self):
         self.speedField.setValue(self.symbolTyped * 60 / self.secondsElapsed)
